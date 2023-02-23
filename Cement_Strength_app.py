@@ -41,18 +41,18 @@ st.info("**Please Enter the Values of the Concrete Compressive Strength Attribut
 col1, col2, = st.columns(2)
 
 with col1:
-    Cement = st.slider("**Cement Component**", 102, 540, value=280, step=1)
-    BFS = st.slider("**Blast Furnace Slag**", 0, 359, value=73, step=1)
-    Fly_Ash = st.slider("**Fly Ash**", 0, 200, value=54, step=1)
-    Water = st.slider("**Water**", 121, 247, value=181, step=1)
+    Cement = st.slider("**Cement Component (kg in a m3 mixture)**", 102, 540, value=280, step=1)
+    BFS = st.slider("**Blast Furnace Slag (kg in a m3 mixture)**", 0, 359, value=73, step=1)
+    Fly_Ash = st.slider("**Fly Ash (kg in a m3 mixture)**", 0, 200, value=54, step=1)
+    Water = st.slider("**Water (kg in a m3 mixture)**", 121, 247, value=181, step=1)
     
 with col2:
-    Superplasticizer = st.slider("**Superplasticizer**", 0, 32, value=6, step=1)
-    Coarse_Agg = st.slider("**Coarse Aggregate**", 801, 1145,  value=972, step=1)
-    Fine_Agg = st.slider("**Fine Aggregate**", 594, 992, value=773, step=1)
-    Age = st.slider("**Age of Concrete in Days**", 1, 365, value=45, step=1)
+    Superplasticizer = st.slider("**Superplasticizer (kg in a m3 mixture)**", 0, 32, value=6, step=1)
+    Coarse_Agg = st.slider("**Coarse Aggregate (kg in a m3 mixture)**", 801, 1145,  value=972, step=1)
+    Fine_Agg = st.slider("**Fine Aggregate (kg in a m3 mixture)**", 594, 992, value=773, step=1)
+    Age = st.slider("**Age of Concrete (Days)**", 1, 365, value=45, step=1)
     
     
 if st.button("**Predict Concrete Compressive Strength**"):
     result = predict(Cement, BFS, Fly_Ash, Water, Superplasticizer, Coarse_Agg, Fine_Agg, Age)
-    st.success("**:green[The concrete compressive strength is {}]**".format(result))
+    st.success("**:green[The concrete compressive strength is {} MPa]**".format(result))
